@@ -1,6 +1,6 @@
 package com.rabbitmq.controllers;
 
-import com.rabbitmq.User;
+import com.rabbitmq.messages.User;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,7 +18,7 @@ public class DemoController {
     @GetMapping("/demo/{name}")
     public String demoAPI(@PathVariable("name") String name) {
         User user = new User(1L, name);
-        rabbitTemplate.convertAndSend(user);
+        rabbitTemplate.convertAndSend("Mobile",user);
         return "Success";
     }
 }

@@ -1,4 +1,4 @@
-package com.rabbitmq;
+package com.rabbitmq.messages;
 
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
